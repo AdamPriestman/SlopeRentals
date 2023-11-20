@@ -171,9 +171,15 @@ GEM
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     orm_adapter (0.5.0)
 >>>>>>> master
+=======
+
+    orm_adapter (0.5.0)
+
+>>>>>>> 2336253e50a2eedec9a74b2aaf4e5c934098db48
     pg (1.5.4)
     popper_js (2.11.8)
     psych (4.0.6)
