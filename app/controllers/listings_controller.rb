@@ -1,6 +1,5 @@
 class ListingsController < ApplicationController
-  # belongs_to :user
-  # has_many :offers
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @listings = Listing.all
@@ -12,8 +11,9 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    @listing.user = current_user
     if @listing.save
-      redirect_to listings_path(@listing)
+      redirect_to listings_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,6 +22,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :equipment_type, :location, :price_per_day, :size, :condition, :brand, :gender)
+    params.require(:listing).permit(:name, :equipment_type, :price_per_day, :size, :condition, :brand, :gender)
   end
 end
