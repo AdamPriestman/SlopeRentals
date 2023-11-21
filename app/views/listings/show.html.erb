@@ -6,21 +6,20 @@
   <h1><%= @listing.name %></h1>
 
     <div class="row product-img">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <%= cl_image_tag @listing.photo.key %>
     </div>
-     <div class="equipment_type">
-      <h2><%= @listing.equipment_type.capitalize %></h2>
-     </div>
 
     <div class ="row">
         <div class="description col-6">
           <ul>
-            <strong><li>Seller:</li></strong>
-            <strong><li>Size:</li></strong>
-            <strong><li>Gender:</li></strong>
-            <strong><li>Condition:</li></strong>
-            <strong><li>Brand:</li></strong>
-            <strong><li>Description:</li></strong>
+          <%# <%= @listing.equipment_type.capitalize %>
+            <li><strong>Equipment: </strong><%= @listing.equipment_type.capitalize %></li>
+            <li><strong>Seller:</strong></li>
+            <li><strong>Size:</strong></li>
+            <li><strong>Gender:</strong></li>
+            <li><strong>Condition:</strong></li>
+            <li><strong>Brand:</strong></li>
+            <li><strong>Description:</strong></li>
           </ul>
 
         </div>
