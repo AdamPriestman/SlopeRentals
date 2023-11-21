@@ -7,3 +7,29 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Cleaning Database"
+Listing.destroy_all
+User.destroy_all
+
+User.create(
+  first_name: "Adam",
+  last_name: "Priestman",
+  location: "London",
+  email: "adam@email.com",
+  password: "password"
+)
+
+Listing.create(
+  name: "Red ski goggles",
+  price_per_day: "10",
+  equipment_type: "goggles",
+  user: User.first
+)
+
+Listing.create(
+  name: "Blue snowboard",
+  price_per_day: "20",
+  equipment_type: "snowboard",
+  user: User.first
+)
