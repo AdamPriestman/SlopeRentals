@@ -1,0 +1,20 @@
+<div class="card-category">
+  <div>
+    <img src="https://i.ebayimg.com/images/g/qEkAAOSw0L5lQ9HM/s-l1200.webp" alt="<% listing.name %>"/>
+  </div>
+  <h3 class="mx-2"><%= link_to listing.name, listing_path(listing) %></h3>
+  <div class="d-flex">
+    <div>
+      <ul>
+        <li>Price per day: £<%= listing.price_per_day %></li>
+        <li>Seller: <%= listing.user.first_name %> <%= listing.user.last_name %> "insert user pfp here"</li>
+        <%# Size %>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <%# Brand, condition %>
+      </ul>
+    </div>
+  </div>
+</div>
