@@ -1,9 +1,14 @@
-<h1>My bookings</h1>
+<div class="bookings-container">
 
-<% @outgoing_offers.each do |offer| %>
-  <li>
-    <%= offer.listing.name %>
-    <%= offer.start_date %>
-    <%= offer.end_date %>
-  </li>
-<% end %>
+  <h1>My bookings</h1>
+
+  <% @outgoing_offers.each do |offer| %>
+    <div class="card-booking">
+      <img src="<%= image_path "booking_test.jpg" %>" />
+      <div class="card-booking-infos">
+        <h2><%= offer.listing.name %></h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+  <% end %>
+</div>
