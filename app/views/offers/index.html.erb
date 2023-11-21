@@ -4,10 +4,17 @@
 
   <% @outgoing_offers.each do |offer| %>
     <div class="card-booking">
-      <img src="<%= image_path "booking_test.jpg" %>" />
+      <%= cl_image_tag offer.listing.photo.key %>
       <div class="card-booking-infos">
         <h2><%= offer.listing.name %></h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
+        <% if offer.offer_status == "pending" %>
+          <p>Reservation request sent, awaiting approval.</p>
+        <% end %>
+        <p><%= link_to "Item details", listing_path(offer.listing) %></p>
+      </div>
+      <div class="card-booking-dates">
+        <h2><%= "#{offer.start_date.day}/#{offer.start_date.mon}/#{offer.start_date.year} - #{offer.end_date.day}/#{offer.end_date.mon}/#{offer.end_date.year}" %></h2>
+        <h2>Total price: £<%= (offer.end_date - offer.start_date).to_i * offer.listing.price_per_day %></h2>
       </div>
     </div>
   <% end %>
