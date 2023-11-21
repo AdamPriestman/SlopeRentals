@@ -5,36 +5,36 @@
 
   <h1><%= @listing.name %></h1>
 
-    <div class="row" class="product-img">
+    <div class="row product-img">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
     </div>
+     <div class="equipment_type">
+      <h2><%= @listing.equipment_type.capitalize %></h2>
+     </div>
 
     <div class ="row">
-        <div class="description">
-          <p><%= @listing.equipment_type %></p>
-          <p><%= @listing.price_per_day %></p>
-          <p>size:</p>
-          <p>gender:</p>
-          <p>condition:</p>
-          <p>brand:</p>
+        <div class="description col-6">
+          <ul>
+            <strong><li>Seller:</li></strong>
+            <strong><li>Size:</li></strong>
+            <strong><li>Gender:</li></strong>
+            <strong><li>Condition:</li></strong>
+            <strong><li>Brand:</li></strong>
+            <strong><li>Description:</li></strong>
+          </ul>
+
         </div>
-        <div class="booking-form"></div>
+
+        <div class="booking-form col-6">
+          <h4>Rent this item</h4>
+          <h6> Price Per Day: <strong>£<%= @listing.price_per_day %><strong></h6>
+          <%= simple_form_for [@listing, @offer] do |f| %>
+            <%= f.input :message %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.submit "Reserve this item", class: "btn btn-primary" %>
+          <% end %>
+        </div>
     </div>
 
 </div>
-<h1><%= @listing.name %></h1>
-<p><%= @listing.equipment_type %></p>
-<p><%= @listing.price_per_day %></p>
-<p>size</p>
-<p>gender</p>
-<p>condition</p>
-<p>brand</p>
-
-
-<h2>Rent this item</h2>
-<%= simple_form_for [@listing, @offer] do |f| %>
-  <%= f.input :message %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "Reserve this item", class: "btn btn-primary" %>
-<% end %>
