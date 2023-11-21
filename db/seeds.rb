@@ -9,6 +9,7 @@
 #   end
 
 puts "Cleaning Database"
+Offer.destroy_all
 Listing.destroy_all
 User.destroy_all
 

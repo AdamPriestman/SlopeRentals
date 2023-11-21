@@ -5,3 +5,12 @@
 <p>gender</p>
 <p>condition</p>
 <p>brand</p>
+
+
+<h2>Rent this item</h2>
+<%= simple_form_for [@listing, @offer] do |f| %>
+  <%= f.input :message %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit "Reserve this item", class: "btn btn-primary" %>
+<% end %>

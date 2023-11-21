@@ -11,5 +11,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resources :listings
+  resources :listings do
+    resources :offers, only: [:create]
+  end
+
+  devise_scope :users do
+    get "users/:id/offers" => "offers#index", as: :offers
+  end
 end
