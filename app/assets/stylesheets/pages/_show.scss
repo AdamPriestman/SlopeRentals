@@ -1,0 +1,13 @@
+.container {
+  margin-left: 20px;
+}
+
+.product-img {
+  overflow: hidden;
+  background: white;
+}
+
+.product-img > img {
+  width: 100px;
+  object-fit: cover;
+}

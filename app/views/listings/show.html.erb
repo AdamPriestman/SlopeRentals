@@ -1,7 +1,24 @@
-<h1><%= @listing.name %></h1>
-<p><%= @listing.equipment_type %></p>
-<p><%= @listing.price_per_day %></p>
-<p>size</p>
-<p>gender</p>
-<p>condition</p>
-<p>brand</p>
+
+
+
+<div class="container justify-content-center">
+
+  <h1><%= @listing.name %></h1>
+
+    <div class="row" class="product-img">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    </div>
+
+    <div class ="row">
+        <div class="description">
+          <p><%= @listing.equipment_type %></p>
+          <p><%= @listing.price_per_day %></p>
+          <p>size:</p>
+          <p>gender:</p>
+          <p>condition:</p>
+          <p>brand:</p>
+        </div>
+        <div class="booking-form"></div>
+    </div>
+
+</div>
