@@ -43,3 +43,30 @@
   width: 800px;
   margin: 0 auto;
 }
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .bookings-container {
+    width: 400px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .bookings-container {
+    width: 600px;
+  }
+}
+
+@media (min-width: 768px) {
+  .bookings-container {
+    width: 700px;
+  }
+}
+
+@media (min-width: 900px) {
+  .bookings-container {
+    width: 800px;
+  }
+}
