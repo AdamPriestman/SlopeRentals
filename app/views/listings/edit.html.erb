@@ -1,0 +1,11 @@
+<h1> Edit your Listing.</h1>
+<%= simple_form_for @listing do |f| %>
+  <%= f.input :name %>
+  <%= f.input :equipment_type %>
+  <%= f.input :price_per_day %>
+  <%= f.input :size %>
+  <%= f.input :condition %>
+  <%= f.input :brand %>
+  <%= f.input :gender %>
+  <%= f.submit "Update your listing", class: "btn btn-primary" %>
+<% end %>
