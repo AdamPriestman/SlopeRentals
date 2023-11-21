@@ -13,6 +13,7 @@ Offer.destroy_all
 Listing.destroy_all
 User.destroy_all
 
+puts "Creating users"
 User.create(
   first_name: "Adam",
   last_name: "Priestman",
@@ -21,6 +22,15 @@ User.create(
   password: "password"
 )
 
+User.create(
+  first_name: "Kata",
+  last_name: "Nagy",
+  location: "Budapest",
+  email: "kata@gmail.com",
+  password: "password"
+)
+
+puts "Creating listings"
 Listing.create(
   name: "Red ski goggles",
   price_per_day: "10",
