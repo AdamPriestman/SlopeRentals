@@ -1,8 +1,15 @@
-<h1> All Listings </h1>
-<div id="listings">
-  <% @listings.each do |listing| %>
-    <p>
-      <%= listing.name %>
-    </p>
-  <% end %>
-</div>
+<div class="row">
+  <div class="filters col-3">
+    <h3>Filters</h3>
+  </div>
+
+  <div class="listings col-8">
+    <h3>Listings</h3>
+      <div id="listings">
+        <% @listings.each do |listing| %>
+          <%= render "listing_card", listing:listing %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
