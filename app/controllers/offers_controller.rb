@@ -5,10 +5,16 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     @offer.listing = @listing
     @offer.user = current_user
-    @offer.save
+    if @offer.save
+      redirect_to offers_path(current_user)
+    else
+      render "listings/show", status: 422
+    end
   end
 
   def index
+    @user = current_user
+    @outgoing_offers = @user.offers
   end
 
   private

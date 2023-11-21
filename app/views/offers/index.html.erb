@@ -1,1 +1,9 @@
 <h1>My bookings</h1>
+
+<% @outgoing_offers.each do |offer| %>
+  <li>
+    <%= offer.listing.name %>
+    <%= offer.start_date %>
+    <%= offer.end_date %>
+  </li>
+<% end %>
