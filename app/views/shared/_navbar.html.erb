@@ -4,29 +4,28 @@
       <%= image_tag "Screenshot 2023-11-21 at 12.11.15.png" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto d-flex align-items-center">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "#1", class: "nav-link" do %>
-              <i class="fa-solid fa-magnifying-glass"></i>
-            <% end %>
+            <div class="search-container">
+              <form action="/index page">
+                <input type="text" placeholder="Find items" name="search">
+                <button type="submit">Submit</button>
+              </form>
+            </div>
           </li>
           <li class="nav-item active">
-            <%= link_to "Home", "#2", class: "nav-link" %>
+            <%= link_to "Home", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Make a listing", "#3", class: "nav-link" %>
+            <%= link_to "Make a listing", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Offers", "#4", class: "dropdown-item" %>
-              <%= link_to "My Profile", "#4", class: "dropdown-item" %>
+              <%= link_to "My Offers", "#", class: "dropdown-item" %>
+              <%= link_to "My Profile", "#", class: "dropdown-item" %>
               <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class:"dropdown-item" %>
             </div>
           </li>
