@@ -14,12 +14,20 @@ Listing.destroy_all
 User.destroy_all
 
 
-puts "Creating User"
+puts "Creating Users"
+User.create(
+  first_name: "Steve",
+  last_name: "Skiiman",
+  location: "London",
+  email: "ski@email.com",
+  password: "password"
+)
+
 User.create(
   first_name: "Adam",
   last_name: "Priestman",
   location: "London",
-  email: "adam@email.com",
+  email: "adampriestman@gmail.com",
   password: "password"
 )
 
