@@ -1,14 +1,13 @@
 <div class="card-form p-5">
-  <h1 class="fw-bold pb-2">  Add new listing!! </h1>
+  <h1 class="fw-bold pb-2"> Edit your Listing</h1>
   <%= simple_form_for @listing do |f| %>
     <%= f.input :name %>
     <%= f.input :equipment_type %>
     <%= f.input :price_per_day %>
-    <%= f.input :photo, as: :file %>
     <%= f.input :size %>
     <%= f.input :condition %>
     <%= f.input :brand %>
     <%= f.input :gender %>
-    <%= f.submit "Submit listing", class: "btn btn-primary" %>
+    <%= f.submit "Update your listing", class: "btn btn-primary" %>
   <% end %>
 </div>

@@ -24,9 +24,19 @@ class ListingsController < ApplicationController
     end
   end
 
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    @listing.update(listing_params)
+    redirect_to listing_path(@listing)
+  end
+
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :equipment_type, :price_per_day, :size, :condition, :brand, :gender)
+    params.require(:listing).permit(:name, :equipment_type, :price_per_day, :photo, :size, :condition, :brand, :gender)
   end
 end
