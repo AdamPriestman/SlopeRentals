@@ -29,6 +29,14 @@
 .card-booking .card-booking-infos {
   padding: 16px;
   flex-grow: 1;
+  position: relative;
+}
+
+#owner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
 }
 
 .card-booking .card-booking-dates {
@@ -37,6 +45,14 @@
   h2 {
     font-size: 16px;
   }
+  position: relative;
+}
+
+#price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 16px;
 }
 
 .bookings-container {
@@ -44,11 +60,23 @@
   margin: 0 auto;
 }
 
+.fa-solid {
+  margin-right: 2px;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .bookings-container {
-    width: 400px;
+    width: 450px;
+  }
+
+  .card-booking {
+    height: 150px;
+    overflow: scroll;
+  }
+
+  .card-booking img {
+    width: 150px;
   }
 }
 
