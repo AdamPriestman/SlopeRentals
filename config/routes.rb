@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :listings do
     resources :offers, only: [:create]
   end
+
+  devise_scope :users do
+    get "users/:id/offers" => "offers#index"
+  end
 end

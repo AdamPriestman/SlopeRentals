@@ -8,6 +8,9 @@ class OffersController < ApplicationController
     @offer.save
   end
 
+  def index
+  end
+
   private
 
   def offer_params
