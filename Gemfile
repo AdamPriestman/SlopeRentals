@@ -7,6 +7,8 @@ gem "rails", "~> 7.1.2"
 
 gem "dotenv-rails"
 
+gem "cloudinary"
+
 gem 'psych', "~> 4.0"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
