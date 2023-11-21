@@ -15,7 +15,6 @@ Offer.destroy_all
 Listing.destroy_all
 User.destroy_all
 
-
 puts "Creating Users"
 User.create(
   first_name: "Steve",
@@ -30,6 +29,14 @@ User.create(
   last_name: "Priestman",
   location: "London",
   email: "adampriestman@gmail.com",
+  password: "password"
+)
+
+User.create(
+  first_name: "Kata",
+  last_name: "Nagy",
+  location: "Budapest",
+  email: "kata@gmail.com",
   password: "password"
 )
 
