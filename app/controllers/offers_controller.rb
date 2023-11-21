@@ -5,6 +5,7 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     @offer.listing = @listing
     @offer.user = current_user
+    @offer.offer_status = "pending"
     if @offer.save
       redirect_to offers_path(current_user)
     else
