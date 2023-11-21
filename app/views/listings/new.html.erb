@@ -1,4 +1,4 @@
-<div class="card-form p-5">
+<div class="card-form">
   <h1 class="fw-bold pb-2">  Add new listing!! </h1>
   <%= simple_form_for @listing do |f| %>
     <%= f.input :name %>
@@ -9,6 +9,7 @@
     <%= f.input :condition %>
     <%= f.input :brand %>
     <%= f.input :gender %>
+    <%= f.input :description%>
     <%= f.submit "Submit listing", class: "btn btn-primary" %>
   <% end %>
 </div>
