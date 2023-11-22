@@ -16,29 +16,42 @@ Listing.destroy_all
 User.destroy_all
 
 puts "Creating Users"
-User.create(
+
+file = URI.open("https://static.vecteezy.com/system/resources/thumbnails/005/544/770/small/profile-icon-design-free-vector.jpg")
+
+user1 = User.new(
   first_name: "Steve",
   last_name: "Skiiman",
   location: "London",
   email: "ski@email.com",
   password: "password"
 )
+user1.photo.attach(io: file, filename: "pfp1.png", content_type: "image/png")
+user1.save!
 
-User.create(
+file = URI.open("https://static.vecteezy.com/system/resources/thumbnails/005/544/770/small/profile-icon-design-free-vector.jpg")
+
+user2 = User.new(
   first_name: "Adam",
   last_name: "Priestman",
   location: "London",
   email: "adampriestman@gmail.com",
   password: "password"
 )
+user2.photo.attach(io: file, filename: "pfp2.png", content_type: "image/png")
+user2.save!
 
-User.create(
+file = URI.open("https://static.vecteezy.com/system/resources/thumbnails/005/544/770/small/profile-icon-design-free-vector.jpg")
+
+user3 = User.new(
   first_name: "Kata",
   last_name: "Nagy",
   location: "Budapest",
   email: "kata@gmail.com",
   password: "password"
 )
+user3.photo.attach(io: file, filename: "pfp3.png", content_type: "image/png")
+user3.save!
 
 puts "Creating Listings"
 
@@ -55,7 +68,7 @@ item1 = Listing.new(
   description: "A brand-new, unused, unworn and undamaged item in the original packaging (such as the original box or bag) and/or with the original tags attached.",
   user: User.first
 )
-item1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+item1.photo.attach(io: file, filename: "item1.png", content_type: "image/png")
 item1.save!
 
 file = URI.open("https://cdn.outsideonline.com/wp-content/uploads/2019/10/07/best-snowboards-1-2020_h.jpg")
@@ -71,7 +84,7 @@ item2 = Listing.new(
   description: "Good condition but has some scratches as you can see in the photos. Missing 2 of the binding bolts but you can get a new set for less than £10. Good bit of kit for a beginner!",
   user: User.first
 )
-item2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+item2.photo.attach(io: file, filename: "item2.png", content_type: "image/png")
 item2.save!
 
 file = URI.open("https://cdn.outsideonline.com/wp-content/uploads/2018/03/15/foldable-poles-shorter-skurka_h.jpg")
@@ -87,7 +100,7 @@ item3 = Listing.new(
   description: "Ideal for sporting enthusiasts who enjoy skiing, these poles are a great addition to any skiing equipment collection. They are well-suited for use in the winter months and will provide you with the necessary support and stability you need during your skiing adventures. Don't miss out on this opportunity to own this quality piece of skiing equipment.",
   user: User.first
 )
-item3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+item3.photo.attach(io: file, filename: "item3.png", content_type: "image/png")
 item3.save!
 
 file = URI.open("https://cdn.skimag.com/wp-content/uploads/2023/08/4frnt-msp-cc_h.jpg")
@@ -103,7 +116,7 @@ item4 = Listing.new(
   description: "A brilliant mini ski for all adult skiers of variable levels and abilities, from beginners to advanced skiers. We have used this length of ski for many years to blast all over the mountain including steep reds and even the odd black run plus snow parks and moguls. Its short turning radius of 6.2 metres and twin tip design is simply amazing.",
   user: User.first
 )
-item4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+item4.photo.attach(io: file, filename: "item4.png", content_type: "image/png")
 item4.save!
 
 file = URI.open("https://cdn.outsideonline.com/wp-content/uploads/2018/10/08/wbg-19-helmet_h.jpg")
@@ -121,7 +134,7 @@ item5 = Listing.new(
   Removable and washable integral inner lining. Front ventilation for constant air circulation with breathable material.",
   user: User.first
 )
-item5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+item5.photo.attach(io: file, filename: "item5.png", content_type: "image/png")
 item5.save!
 
 file = URI.open("https://cdn.outsideonline.com/wp-content/uploads/2021/02/09/hestra-gloves-jackson_h.jpg")
@@ -137,5 +150,5 @@ item6 = Listing.new(
   description: "Heated Glove Liners,Electric Rechargeable Battery Heated Gloves Mittens Ski/Cycling/hunting Comfortable Thermal Thin Heated Gloves",
   user: User.first
 )
-item6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+item6.photo.attach(io: file, filename: "item6.png", content_type: "image/png")
 item6.save!
