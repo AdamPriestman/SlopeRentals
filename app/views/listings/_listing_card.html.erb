@@ -6,19 +6,7 @@
     <h2>Nothing here yet!</h2>
   <% end %>
   </div>
-  <h3 class="mx-2"><%= listing.name %></h3>
-  <div class="d-flex">
-    <div>
-      <ul>
-        <li>Price per day: £<%= listing.price_per_day %></li>
-        <li>Seller: <%= listing.user.first_name %> <%= listing.user.last_name %> "insert user pfp here"</li>
-        <%# Size %>
-      </ul>
-    </div>
-    <div>
-      <ul>
-        <%# Brand, condition %>
-      </ul>
-    </div>
-  </div>
+  <h3><%= listing.name %></h3>
+  <p>Price per day: £<%= listing.price_per_day %></p>
+  <p>Seller: <%= listing.user.first_name %> <%= listing.user.last_name %> "insert user pfp here"</p>
 </div>
