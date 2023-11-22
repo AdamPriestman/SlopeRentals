@@ -7,7 +7,14 @@
     <div>
       <ul>
         <li>Price per day: £<%= listing.price_per_day %></li>
-        <li>Seller: <%= listing.user.first_name %> <%= listing.user.last_name %> "insert user pfp here"</li>
+        <li>Seller: <%= listing.user.first_name %> <%= listing.user.last_name %></li>
+        <li>
+          <% if listing.user.photo.key? %>
+            <%= cl_image_tag listing.user.photo.key %>
+          <% else %>
+            <p><img src="unknown.png" alt="profile pic" ></p>
+          <% end %>
+        </li>
         <%# Size %>
       </ul>
     </div>
