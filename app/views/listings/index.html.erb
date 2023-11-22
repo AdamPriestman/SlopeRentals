@@ -13,7 +13,9 @@
   <div class="listings col-8 mt-3">
       <div id="listings">
         <% @listings.each do |listing| %>
-          <%= render "listing_card", listing:listing %>
+          <%= link_to listing_path(listing) do %>
+            <%= render "listing_card", listing:listing %>
+          <% end %>
         <% end %>
       </div>
 
