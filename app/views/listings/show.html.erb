@@ -3,7 +3,7 @@
 
 <div class="container justify-content-center">
 
-  <h1><%= @listing.name %></h1>
+  <h1 class="pt-3 pb-3"><%= @listing.name %></h1>
 
     <div class="row product-img">
       <%= cl_image_tag @listing.photo.key %>
@@ -12,14 +12,13 @@
     <div class ="row">
         <div class="description col-6">
           <ul>
-          <%# <%= @listing.equipment_type.capitalize %>
-            <li><strong>Equipment: </strong><%= @listing.equipment_type.capitalize %></li>
-            <li><strong>Seller:</strong></li>
-            <li><strong>Size:</strong></li>
-            <li><strong>Gender:</strong></li>
-            <li><strong>Condition:</strong></li>
-            <li><strong>Brand:</strong></li>
-            <li><strong>Description:</strong></li>
+            <li class="border-bottom"><strong>Equipment: </strong><%= @listing.equipment_type.capitalize %></li>
+            <li class="border-bottom pb-3"><strong>Seller: </strong><%= @listing.user.first_name%><%= @listing.user.last_name %></li>
+            <li><strong>Size: </strong><%= @listing.size %></li>
+            <li><strong>Gender: </strong><%= @listing.gender.capitalize %></li>
+            <li><strong>Condition: </strong><%= @listing.condition.capitalize %></li>
+            <li class="border-bottom pb-3"><strong>Brand: </strong><%= @listing.brand.capitalize %></li>
+            <li><strong>Description: </strong><%= @listing.description %></li>
           </ul>
 
         </div>
