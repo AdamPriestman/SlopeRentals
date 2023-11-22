@@ -3,6 +3,9 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+    # @listings.each do |listing|
+    #   seller_of_the_listing = listing.user.photo
+    # end
   end
 
   def show
