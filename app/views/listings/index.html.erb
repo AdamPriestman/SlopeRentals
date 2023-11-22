@@ -5,21 +5,72 @@
   </div>
 </div>
 
-<div class="row">
-  <div data-controller="filter">
-    <button class="btn btn-primary" data-filter-target="button" data-action="click->filter#expandFilters">Refine search</button>
-    <div class="filters col-3 d-none" data-filter-target="filters">
-      <h3>Filters</h3>
-      <button data-action="click->filter#closeFilters"><i class="fa-solid fa-x"></i></button>
-    </div>
+<div class="d-flex">
+  <div data-controller="filter" class="filter_sidebar">
+    <button class="filter_button btn" data-filter-target="button" data-action="click->filter#expandFilters"><i class="fa-solid fa-sliders fa-l"></i> Filter</button>
+      <div class="filters d-none filter py-3 my-3" data-filter-target="filters">
+        <div class="d-flex filter-header justify-content-between">
+          <h3>Filters</h3>
+          <button data-action="click->filter#closeFilters" class="btn filter_x" do><i class="fa-solid fa-x"></i></button>
+        </div>
+        <h5 class="filter_heading">Item type</h5>
+        <div class="filter_sub d-flex align-items-center">
+          <ul>
+            <li>
+              <label for="snowboard">Snowboard</label>
+              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            </li>
+            <li>
+              <label for="snowboard">Helmet</label>
+              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            </li>
+            <li>
+              <label for="snowboard">Gloves</label>
+              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            </li>
+            <li>
+              <label for="snowboard">Skis</label>
+              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            </li>
+          </ul>
+        </div>
+        <h5 class="filter_heading">Condition</h5>
+        <div class="filter_sub d-flex align-items-center">
+          <ul>
+            <li>
+              <label for="snowboard">Brand new</label>
+              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            </li>
+            <li>
+              <label for="snowboard">Excellent</label>
+              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            </li>
+            <li>
+              <label for="snowboard">Very good</label>
+              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            </li>
+            <li>
+              <label for="snowboard">Good</label>
+              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            </li>
+            <li>
+              <label for="snowboard">Well worn</label>
+              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            </li>
+          </ul>
+        </div>
+      </div>
   </div>
 
-  <div class="listings col-8">
-    <h3>Listings</h3>
+  <div class="row container d-flex justify-content-center">
+    <div class="listings mt-3">
       <div id="listings">
         <% @listings.each do |listing| %>
-          <%= render "listing_card", listing:listing %>
+          <%= link_to listing_path(listing) do %>
+            <%= render "listing_card", listing:listing %>
+          <% end %>
         <% end %>
       </div>
+    </div>
   </div>
 </div>
