@@ -6,8 +6,12 @@
 </div>
 
 <div class="row">
-  <div class="filters col-3">
-    <h3>Filters</h3>
+  <div data-controller="filter">
+    <button class="btn btn-primary" data-filter-target="button" data-action="click->filter#expandFilters">Refine search</button>
+    <div class="filters col-3 d-none" data-filter-target="filters">
+      <h3>Filters</h3>
+      <button data-action="click->filter#closeFilters"><i class="fa-solid fa-x"></i></button>
+    </div>
   </div>
 
   <div class="listings col-8 mt-3">
@@ -18,6 +22,5 @@
           <% end %>
         <% end %>
       </div>
-
-    </div>
   </div>
+</div>
