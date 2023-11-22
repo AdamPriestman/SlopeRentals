@@ -10,3 +10,9 @@
   <p>Price per day: £<%= listing.price_per_day %></p>
   <p>Seller: <%= listing.user.first_name %> <%= listing.user.last_name %></p>
 </div>
+
+<%# <% if listing.user.photo.key? %>
+  <%# <%= cl_image_tag listing.user.photo.key %>
+<%# <% else %>
+  <%# <p><img src="unknown.png" alt="profile pic" ></p> %>
+<%# <% end %>
