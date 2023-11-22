@@ -1,13 +1,15 @@
-<div class="card-form p-5">
+<div class="form-container">
   <h1 class="fw-bold pb-2"> Edit your Listing</h1>
   <%= simple_form_for @listing do |f| %>
-    <%= f.input :name %>
-    <%= f.input :equipment_type %>
-    <%= f.input :price_per_day %>
-    <%= f.input :size %>
-    <%= f.input :condition %>
-    <%= f.input :brand %>
-    <%= f.input :gender %>
-    <%= f.submit "Update your listing", class: "btn btn-primary" %>
+  <%= f.input :name, placeholder: "Name", label: false %>
+    <%= f.input :equipment_type, placeholder: "Equipment Type", label: false %>
+    <%= f.input :price_per_day, placeholder: "Price per day, £", label: false %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :size, placeholder: "Size", label: false %>
+    <%= f.input :condition, placeholder: "Condition", label: false %>
+    <%= f.input :brand, placeholder: "Brand", label: false %>
+    <%= f.input :gender, placeholder: "Gender", label: false %>
+    <%= f.input :description, placeholder: "Description", label: false%>
+    <%= f.submit "Submit listing", class: "btn btn-primary" %>
   <% end %>
 </div>
