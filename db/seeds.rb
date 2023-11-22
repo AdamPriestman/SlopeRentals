@@ -48,61 +48,93 @@ item1 = Listing.new(
   name: "Red ski goggles",
   price_per_day: "10",
   equipment_type: "goggles",
+  size: 5,
+  gender: "mens",
+  condition: "brand new",
+  brand: "mountain warehouse",
+  description: "A brand-new, unused, unworn and undamaged item in the original packaging (such as the original box or bag) and/or with the original tags attached.",
   user: User.first
 )
 item1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 item1.save!
 
-file = URI.open("https://d1nymbkeomeoqg.cloudfront.net/photos/25/98/381317_2182_XXL.jpg")
+file = URI.open("https://cdn.outsideonline.com/wp-content/uploads/2019/10/07/best-snowboards-1-2020_h.jpg")
 
 item2 = Listing.new(
-  name: "Blue snowboard",
+  name: "Black and Brown Snowboard",
   price_per_day: "20",
   equipment_type: "snowboard",
+  size: 155,
+  gender: "unisex",
+  condition: "used",
+  brand: "burton",
+  description: "Good condition but has some scratches as you can see in the photos. Missing 2 of the binding bolts but you can get a new set for less than £10. Good bit of kit for a beginner!",
   user: User.first
 )
 item2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 item2.save!
 
-file = URI.open("https://d1nymbkeomeoqg.cloudfront.net/photos/25/98/381317_2182_XXL.jpg")
+file = URI.open("https://cdn.outsideonline.com/wp-content/uploads/2018/03/15/foldable-poles-shorter-skurka_h.jpg")
 
 item3 = Listing.new(
-  name: "Green ski poles",
+  name: "Collapsible ski poles",
   price_per_day: "10",
   equipment_type: "poles",
+  size: 105,
+  gender: "unisex",
+  condition: "used",
+  brand: "saloman",
+  description: "Ideal for sporting enthusiasts who enjoy skiing, these poles are a great addition to any skiing equipment collection. They are well-suited for use in the winter months and will provide you with the necessary support and stability you need during your skiing adventures. Don't miss out on this opportunity to own this quality piece of skiing equipment.",
   user: User.first
 )
 item3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 item3.save!
 
-file = URI.open("https://d1nymbkeomeoqg.cloudfront.net/photos/25/98/381317_2182_XXL.jpg")
+file = URI.open("https://cdn.skimag.com/wp-content/uploads/2023/08/4frnt-msp-cc_h.jpg")
 
 item4 = Listing.new(
   name: "Purple pair of skis",
   price_per_day: "30",
   equipment_type: "skis",
+  size: 154,
+  gender: "Womens",
+  condition: " Brand new",
+  brand: "VOLKL",
+  description: "A brilliant mini ski for all adult skiers of variable levels and abilities, from beginners to advanced skiers. We have used this length of ski for many years to blast all over the mountain including steep reds and even the odd black run plus snow parks and moguls. Its short turning radius of 6.2 metres and twin tip design is simply amazing.",
   user: User.first
 )
 item4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 item4.save!
 
-file = URI.open("https://d1nymbkeomeoqg.cloudfront.net/photos/25/98/381317_2182_XXL.jpg")
+file = URI.open("https://cdn.outsideonline.com/wp-content/uploads/2018/10/08/wbg-19-helmet_h.jpg")
 
 item5 = Listing.new(
   name: "Black helmet",
   price_per_day: "8",
   equipment_type: "helmet",
+  size: 5,
+  gender: "Mens",
+  condition: "used",
+  brand: "Atomic",
+  description: "All-mountain ski helmet for men and women, size S (53-56 cm), easy and fast adjustment to all head shapes with the rear dial.
+  Lightweight (510 g) thanks to the rigid ABS shell. Personalised and comfortable fit thanks to wide band memory foam, padded chinrest.
+  Removable and washable integral inner lining. Front ventilation for constant air circulation with breathable material.",
   user: User.first
 )
 item5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 item5.save!
 
-file = URI.open("https://d1nymbkeomeoqg.cloudfront.net/photos/25/98/381317_2182_XXL.jpg")
+file = URI.open("https://cdn.outsideonline.com/wp-content/uploads/2021/02/09/hestra-gloves-jackson_h.jpg")
 
 item6 = Listing.new(
-  name: "White gloves",
+  name: "Brown gloves",
   price_per_day: "5",
   equipment_type: "gloves",
+  size: 10,
+  gender: "Womens",
+  condition: "Used",
+  brand: "Hestra",
+  description: "Heated Glove Liners,Electric Rechargeable Battery Heated Gloves Mittens Ski/Cycling/hunting Comfortable Thermal Thin Heated Gloves",
   user: User.first
 )
 item6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
