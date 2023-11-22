@@ -1,8 +1,22 @@
-<h1> All Listings </h1>
-<div id="listings">
-  <% @listings.each do |listing| %>
-    <p>
-      <%= listing.name %>
-    </p>
-  <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "Ski-slope-banner-image-1600x393.jpg" %>);">
+  <div class="container">
+    <h1>Find the perfect ski equipment for your snowy holiday</h1>
+    <p>Advertise and browse skiing equipment in your area</p>
+  </div>
 </div>
+
+<div class="row">
+  <div class="filters col-3">
+    <h3>Filters</h3>
+  </div>
+
+  <div class="listings col-8">
+    <h3>Listings</h3>
+      <div id="listings">
+        <% @listings.each do |listing| %>
+          <%= render "listing_card", listing:listing %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>

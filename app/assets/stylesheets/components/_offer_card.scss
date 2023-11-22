@@ -1,0 +1,100 @@
+.card-booking {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  margin-top: 16px;
+}
+
+.card-booking img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-booking h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-booking p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-booking .card-booking-infos {
+  padding: 16px;
+  flex-grow: 1;
+  position: relative;
+}
+
+#owner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+}
+
+.card-booking .card-booking-dates {
+  padding: 16px;
+  text-align: end;
+  h2 {
+    font-size: 16px;
+  }
+  position: relative;
+}
+
+#price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 16px;
+}
+
+.bookings-container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.fa-solid {
+  margin-right: 2px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .bookings-container {
+    width: 450px;
+  }
+
+  .card-booking {
+    height: 150px;
+    overflow: scroll;
+  }
+
+  .card-booking img {
+    width: 150px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .bookings-container {
+    width: 600px;
+  }
+}
+
+@media (min-width: 768px) {
+  .bookings-container {
+    width: 700px;
+  }
+}
+
+@media (min-width: 900px) {
+  .bookings-container {
+    width: 800px;
+  }
+}

@@ -1,16 +1,39 @@
-<h1><%= @listing.name %></h1>
-<p><%= @listing.equipment_type %></p>
-<p><%= @listing.price_per_day %></p>
-<p>size</p>
-<p>gender</p>
-<p>condition</p>
-<p>brand</p>
 
 
-<h2>Rent this item</h2>
-<%= simple_form_for [@listing, @offer] do |f| %>
-  <%= f.input :message %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "Reserve this item", class: "btn btn-primary" %>
-<% end %>
+
+<div class="container justify-content-center">
+
+  <h1><%= @listing.name %></h1>
+
+    <div class="row product-img">
+      <%= cl_image_tag @listing.photo.key %>
+    </div>
+
+    <div class ="row">
+        <div class="description col-6">
+          <ul>
+          <%# <%= @listing.equipment_type.capitalize %>
+            <li><strong>Equipment: </strong><%= @listing.equipment_type.capitalize %></li>
+            <li><strong>Seller:</strong></li>
+            <li><strong>Size:</strong></li>
+            <li><strong>Gender:</strong></li>
+            <li><strong>Condition:</strong></li>
+            <li><strong>Brand:</strong></li>
+            <li><strong>Description:</strong></li>
+          </ul>
+
+        </div>
+
+        <div class="booking-form col-6">
+          <h4>Rent this item</h4>
+          <h6> Price Per Day: <strong>£<%= @listing.price_per_day %><strong></h6>
+          <%= simple_form_for [@listing, @offer] do |f| %>
+            <%= f.input :message %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.submit "Reserve this item", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+    </div>
+
+</div>

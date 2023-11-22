@@ -1,12 +1,16 @@
-.cards {
+#listings {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .card-category {
   height: 300px;
-  width: 400px;
+  // width: 400px;
   color: black;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
