@@ -1,17 +1,27 @@
-<div class="show-container">
 
-</div>
 <div class="container justify-content-center">
 
-  <h1 class="pt-3 pb-3"><%= @listing.name %></h1>
+  <h1 class="pt-5 pb-1"><%= @listing.name %></h1>
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <% @listing.photos.each do |photo| %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, class: "d-block w-100" %>
+          </div>
+        <% end %>
 
-    <% @listing.photos.each do |photo| %>
-      <div class="row product-img">
-        <%= cl_image_tag photo.key %>
-      </div>
-    <% end %>
+    </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-    <div class ="row">
+    <div class ="row pt-2">
         <div class="description col-6">
           <ul>
             <li class="border-bottom"><strong>Equipment: </strong><%= @listing.equipment_type.capitalize %></li>
@@ -22,7 +32,6 @@
             <li class="border-bottom pb-3"><strong>Brand: </strong><%= @listing.brand.capitalize %></li>
             <li><strong>Description: </strong><%= @listing.description %></li>
           </ul>
-
         </div>
 
         <div class="booking-form col-6">
@@ -41,4 +50,4 @@
         </div>
     </div>
 
-</div>
+  </div>
