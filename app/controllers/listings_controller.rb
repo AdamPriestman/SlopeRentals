@@ -41,11 +41,12 @@ class ListingsController < ApplicationController
       :name,
       :equipment_type,
       :price_per_day,
-      :photos [],
       :size,
       :condition,
       :brand,
       :gender,
-      :description)
+      :description,
+      photos: []
+    )
   end
 end
