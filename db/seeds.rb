@@ -12,11 +12,19 @@ require "open-uri"
 
 puts "Cleaning Database"
 Offer.destroy_all
-
+puts "All offers destroyed"
 Listing.destroy_all
+puts "All listings detroyed"
 User.destroy_all
+puts "Users crushed, killed, destroyed"
+puts "______"
+puts "______"
+puts "______"
 
 puts "Creating Users"
+puts "______"
+puts "______"
+puts "______"
 
 file = URI.open("https://static.vecteezy.com/system/resources/thumbnails/005/544/770/small/profile-icon-design-free-vector.jpg")
 
