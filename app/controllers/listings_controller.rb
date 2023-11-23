@@ -2,7 +2,14 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @listings = Listing.all
+    # @listings.each do |listing|
+    #   seller_of_the_listing = listing.user.photo
+    # end
+    if params[:query].present?
+      @listings = Listing.search_by_name_and_description(params[:query])
+    else
+      @listings = Listing.all
+    end
   end
 
   def show

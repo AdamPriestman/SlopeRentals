@@ -9,6 +9,8 @@ gem "dotenv-rails"
 
 gem "cloudinary"
 
+gem "pg_search"
+
 gem 'psych', "~> 4.0"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
