@@ -1,6 +1,6 @@
 #listings {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
@@ -25,39 +25,69 @@ a {
 
 .card-category {
   overflow: hidden;
-  background: white;
+  background: #EEF5FF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   color: black;
+  width: 400px;
+  min-height: 300px;
+  padding: 8px;
+
   img {
     height: 200px;
     width: 100%;
     object-fit: cover;
   }
-  h2 {
-    font-size: 16px;
+  h4 {
+    font-size: 24px;
     font-weight: bold;
-    margin: 0;
+    margin: 8px;
+    margin-top: 16px;
   }
 
   p {
-    font-size: 12px;
+    font-size: 20px;
     opacity: .7;
     margin: 0;
   }
+
+  .card-infos-container {
+    width: 95%;
+    margin: 0 auto;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.card-category:hover {
+  background: rgb(158, 184, 217);
+  transition: all 0.5s ease;
 }
 
 .card-category .card-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  align-items: center;
 
   img {
     height: 10%;
     width: 10%;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+  .seller {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
+
+.card-infos-price {
+  min-width: fit-content;
+}
+
 
 .card-infos .card-seller {
   position: absolute;
@@ -93,13 +123,13 @@ a {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
