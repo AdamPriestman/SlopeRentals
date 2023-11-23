@@ -1,6 +1,6 @@
 <div data-controller="filter" class="filter_sidebar">
   <button class="filter_button btn" data-filter-target="button" data-action="click->filter#expandFilters"><i class="fa-solid fa-sliders fa-l"></i> Filter</button>
-    <div class="filters d-none filter py-3 my-3" data-filter-target="filters">
+    <div class="filters d-none filter py-3 my-3" data-filter-target="filters" data-controller="results-filter">
       <div class="d-flex filter-header justify-content-between">
         <h3>Filters</h3>
         <button data-action="click->filter#closeFilters" class="btn filter_x" do><i class="fa-solid fa-x"></i></button>
@@ -10,7 +10,7 @@
         <ul>
           <li>
             <label for="snowboard">Snowboard</label>
-            <input type="checkbox" id="condition" name="snowboard" value="snowboard">
+            <input type="checkbox" id="condition" name="snowboard" value="snowboard" data-results-filter-target="checkbox">
           </li>
           <li>
             <label for="snowboard">Helmet</label>
@@ -56,6 +56,6 @@
           </li>
         </ul>
       </div>
-
+      <button data-action="click->results-filter#filterIndex" class="btn btn-outline-primary">Apply filters</button>
     </div>
 </div>
