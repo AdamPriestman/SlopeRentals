@@ -1,5 +1,5 @@
 <div class="card-booking">
-  <%= cl_image_tag offer.listing.photo.key %>
+  <%= cl_image_tag offer.listing.photos.first.key %>
   <div class="card-booking-infos">
     <h2><%= offer.listing.name %></h2>
     <p><i class="fa-solid fa-location-dot"></i><strong><%= offer.listing.user.location %></strong></p>
