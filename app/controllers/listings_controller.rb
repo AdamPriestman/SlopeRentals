@@ -3,9 +3,6 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    # @listings.each do |listing|
-    #   seller_of_the_listing = listing.user.photo
-    # end
   end
 
   def show
@@ -40,6 +37,16 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :equipment_type, :price_per_day, :photo, :size, :condition, :brand, :gender, :description)
+    params.require(:listing).permit(
+      :name,
+      :equipment_type,
+      :price_per_day,
+      :size,
+      :condition,
+      :brand,
+      :gender,
+      :description,
+      photos: []
+    )
   end
 end
