@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+.info-cards-container{
+  display: flex;
+  justify-content: space-evenly;
+  .info-card {
+    background-color: green;
+  }
+}
+
+.search-container-banner {
+  #search-input {
+    border-radius: 32px;
+  }
+}
