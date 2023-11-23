@@ -8,6 +8,21 @@ a {
   text-decoration: none;
 }
 
+.search-container-banner {
+  align-items: center;
+  form {
+    height: 80px;
+    input {
+      font-size: 28px;
+    }
+  }
+  i {
+    font-size: 28px;
+    color: white;
+    margin-left: 8px;
+  }
+}
+
 .card-category {
   height: 300px;
   color: black;

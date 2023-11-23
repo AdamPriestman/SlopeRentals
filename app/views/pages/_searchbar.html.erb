@@ -1,0 +1,6 @@
+<%= form_with url: listings_path, method: :get, class: "d-flex" do |f| %>
+  <%= f.text_field :query, id: "search-input", placeholder: "Find ski gear!", class: "form-control bg-white"%>
+  <%= f.button nil, class:"nav-link" do %>
+    <i class="fa-solid fa-magnifying-glass"></i>
+  <% end %>
+<% end %>

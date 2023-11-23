@@ -1,34 +1,25 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "Ski-slope-banner-image-1600x393.jpg" %>);">
-  <div class="content container">
-    <h1>Find the perfect ski equipment for your snowy holiday</h1>
-    <p>Buy and sell skiing equipment in your area</p>
-    <%= link_to "Buy now!", "#listings_anchor", class: "btn btn-primary" %>
-    <%= link_to "#listings_anchor" do%>
-      <i class="fa-solid fa-arrow-down"></i>
-    <% end %>
-  </div>
-</div>
-
-<div class="d-flex">
-  <div data-controller="filter" class="filter_sidebar">
-    <button class="filter_button btn" data-filter-target="button" data-action="click->filter#expandFilters"><i class="fa-solid fa-sliders fa-l"></i> Filter</button>
-      <div class="filters d-none filter py-3 my-3" data-filter-target="filters">
-        <div class="d-flex filter-header justify-content-between">
-          <h3>Filters</h3>
-          <button data-action="click->filter#closeFilters" class="btn filter_x" do><i class="fa-solid fa-x"></i></button>
+<div class="results-container">
+  <div class="d-flex">
+    <div data-controller="filter" class="filter_sidebar">
+      <button class="filter_button btn" data-filter-target="button" data-action="click->filter#expandFilters"><i class="fa-solid fa-sliders fa-l"></i> Filter</button>
+        <div class="filters d-none filter py-3 my-3" data-filter-target="filters">
+          <div class="d-flex filter-header justify-content-between">
+            <h3>Filters</h3>
+            <button data-action="click->filter#closeFilters" class="btn filter_x" do><i class="fa-solid fa-x"></i></button>
+          </div>
+          <%= render "filters" %>
         </div>
-        <%= render "filters" %>
-      </div>
-  </div>
+    </div>
 
-  <div id="listings_anchor" class="row container d-flex justify-content-center">
-    <div class="listings mt-3">
-      <div id="listings">
-        <% @listings.each do |listing| %>
-          <%= link_to listing_path(listing) do %>
-            <%= render "listing_card", listing:listing %>
+    <div id="listings_anchor" class="row container d-flex justify-content-center">
+      <div class="listings mt-3">
+        <div id="listings">
+          <% @listings.each do |listing| %>
+            <%= link_to listing_path(listing) do %>
+              <%= render "listing_card", listing:listing %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
