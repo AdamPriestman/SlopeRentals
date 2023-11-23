@@ -17,10 +17,6 @@ class OffersController < ApplicationController
     @user = current_user
     @outgoing_offers = @user.offers.sort_by(&:start_date)
     @listings = @user.listings
-    @incoming_offers = []
-    @listings.each do |listing|
-      listing.offers.each { |offer| @incoming_offers << offer }
-    end
   end
 
   private

@@ -13,8 +13,10 @@
     </div>
   </div>
   <div class="d-none" data-reservation-target="reservations">
-    <% listing.offers.each do |offer| %>
-      <%= render "incoming_booking", offer:offer %>
-    <% end %>
+    <div class="incoming-card">
+      <% listing.offers.sort_by(&:start_date).each do |offer| %>
+        <%= render "incoming_booking", offer:offer %>
+      <% end %>
+    </div>
   </div>
 </div>

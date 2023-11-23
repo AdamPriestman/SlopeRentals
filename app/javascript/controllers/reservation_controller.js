@@ -7,7 +7,12 @@ export default class extends Controller {
   connect() {
   }
 
-  displayReservations() {
-    this.reservationsTarget.classList.remove("d-none");
+  displayReservations(event) {
+    this.reservationsTarget.classList.toggle("d-none");
+    if (event.target.innerText === "Reservations") {
+      event.target.innerText = "Close";
+    } else {
+      event.target.innerText = "Reservations"
+    }
   }
 }

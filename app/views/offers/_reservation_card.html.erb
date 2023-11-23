@@ -3,8 +3,8 @@
   <div class="card-booking-infos">
     <h2><%= offer.listing.name %></h2>
     <p><i class="fa-solid fa-location-dot"></i><strong><%= offer.listing.user.location %></strong></p>
-    <% if offer.offer_status == "pending" %>
-      <p>Reservation request sent, awaiting approval.</p>
+    <% if offer.start_date >= Date.today %>
+      <p>Booking confirmed, awating collection.</p>
     <% end %>
     <p id="owner">Owner: <%= "#{offer.listing.user.first_name.capitalize} #{offer.listing.user.last_name.capitalize}" %></p>
   </div>
