@@ -28,8 +28,12 @@
           <h6> Price Per Day: <strong>£<%= @listing.price_per_day %><strong></h6>
           <%= simple_form_for [@listing, @offer] do |f| %>
             <%= f.input :message %>
-            <%= f.input :start_date %>
-            <%= f.input :end_date %>
+            <%= f.input :start_date,
+                        as: :string,
+                        input_html: { data: { controller: "datepicker" } } %>
+            <%= f.input :end_date,
+                        as: :string,
+                        input_html: { data: { controller: "datepicker" } } %>
             <%= f.submit "Reserve this item", class: "btn btn-primary" %>
           <% end %>
         </div>
