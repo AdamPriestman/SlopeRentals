@@ -24,7 +24,13 @@
             <%= link_to "Make a listing", new_listing_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+
+         <% if current_user.photo.key? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+           <% else %>
+              <%= image_tag "unknown.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+          <% end %>
+
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Items", offers_path(current_user), class: "dropdown-item" %>
               <%= link_to "My Profile", "#", class: "dropdown-item" %>
