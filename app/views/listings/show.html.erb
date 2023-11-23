@@ -5,9 +5,11 @@
 
   <h1 class="pt-3 pb-3"><%= @listing.name %></h1>
 
-    <div class="row product-img">
-      <%= cl_image_tag @listing.photo.key %>
-    </div>
+    <% @listing.photos.each do |photo| %>
+      <div class="row product-img">
+        <%= cl_image_tag photo.key %>
+      </div>
+    <% end %>
 
     <div class ="row">
         <div class="description col-6">
