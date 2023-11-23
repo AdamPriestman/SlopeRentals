@@ -1,0 +1,15 @@
+<div class="card-booking">
+  <%= cl_image_tag offer.listing.photo.key %>
+  <div class="card-booking-infos">
+    <h2><%= offer.listing.name %></h2>
+    <p><i class="fa-solid fa-location-dot"></i><strong><%= offer.listing.user.location %></strong></p>
+    <% if offer.offer_status == "pending" %>
+      <p>Reservation request sent, awaiting approval.</p>
+    <% end %>
+    <p id="owner">Owner: <%= "#{offer.listing.user.first_name.capitalize} #{offer.listing.user.last_name.capitalize}" %></p>
+  </div>
+  <div class="card-booking-dates">
+    <h2><%= "#{offer.start_date.day}/#{offer.start_date.mon}/#{offer.start_date.year} - #{offer.end_date.day}/#{offer.end_date.mon}/#{offer.end_date.year}" %></h2>
+    <h2 id="price">Total price: £<%= ((offer.end_date - offer.start_date).to_i + 1) * offer.listing.price_per_day %></h2>
+  </div>
+</div>

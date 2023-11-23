@@ -46,7 +46,20 @@
   h2 {
     font-size: 16px;
   }
+
+  h3 {
+    font-size: 20px;
+  }
   position: relative;
+}
+
+.reserve {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  border-radius: 10px;
 }
 
 #price {
