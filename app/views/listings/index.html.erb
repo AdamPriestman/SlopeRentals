@@ -1,7 +1,11 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "Ski-slope-banner-image-1600x393.jpg" %>);">
-  <div class="container">
+  <div class="content container">
     <h1>Find the perfect ski equipment for your snowy holiday</h1>
-    <p>Advertise and browse skiing equipment in your area</p>
+    <p>Buy and sell skiing equipment in your area</p>
+    <%= link_to "Buy now!", "#listings_anchor", class: "btn btn-primary" %>
+    <%= link_to "#listings_anchor" do%>
+      <i class="fa-solid fa-arrow-down"></i>
+    <% end %>
   </div>
 </div>
 
@@ -13,56 +17,11 @@
           <h3>Filters</h3>
           <button data-action="click->filter#closeFilters" class="btn filter_x" do><i class="fa-solid fa-x"></i></button>
         </div>
-        <h5 class="filter_heading">Item type</h5>
-        <div class="filter_sub d-flex align-items-center">
-          <ul>
-            <li>
-              <label for="snowboard">Snowboard</label>
-              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
-            </li>
-            <li>
-              <label for="snowboard">Helmet</label>
-              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
-            </li>
-            <li>
-              <label for="snowboard">Gloves</label>
-              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
-            </li>
-            <li>
-              <label for="snowboard">Skis</label>
-              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
-            </li>
-          </ul>
-        </div>
-        <h5 class="filter_heading">Condition</h5>
-        <div class="filter_sub d-flex align-items-center">
-          <ul>
-            <li>
-              <label for="snowboard">Brand new</label>
-              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
-            </li>
-            <li>
-              <label for="snowboard">Excellent</label>
-              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
-            </li>
-            <li>
-              <label for="snowboard">Very good</label>
-              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
-            </li>
-            <li>
-              <label for="snowboard">Good</label>
-              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
-            </li>
-            <li>
-              <label for="snowboard">Well worn</label>
-              <input type="checkbox" id="condition" name="snowboard" value="snowboard">
-            </li>
-          </ul>
-        </div>
+        <%= render "filters" %>
       </div>
   </div>
 
-  <div class="row container d-flex justify-content-center">
+  <div id="listings_anchor" class="row container d-flex justify-content-center">
     <div class="listings mt-3">
       <div id="listings">
         <% @listings.each do |listing| %>
