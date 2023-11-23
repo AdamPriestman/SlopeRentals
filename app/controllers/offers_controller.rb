@@ -16,6 +16,7 @@ class OffersController < ApplicationController
   def index
     @user = current_user
     @outgoing_offers = @user.offers.sort_by(&:start_date)
+    @listings = @user.listings
   end
 
   private

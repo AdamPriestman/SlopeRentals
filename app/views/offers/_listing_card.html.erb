@@ -1,0 +1,22 @@
+<div data-controller="reservation">
+  <div class="card-booking">
+    <%= cl_image_tag listing.photo.key %>
+    <div class="card-booking-infos">
+      <h2><%= listing.name %></h2>
+      <p><%= listing.equipment_type %></p>
+      <p><%= link_to "Item details", listing_path(listing) %></p>
+      <p><%= link_to "Edit this listing", edit_listing_path(listing) %></p>
+    </div>
+    <div class="card-booking-dates">
+      <h3><%= listing.price_per_day %>£ per day</h3>
+      <button class="btn btn-outline-dark reserve" data-action="click->reservation#displayReservations">Reservations</button>
+    </div>
+  </div>
+  <div class="d-none" data-reservation-target="reservations">
+    <div class="incoming-card">
+      <% listing.offers.sort_by(&:start_date).each do |offer| %>
+        <%= render "incoming_booking", offer:offer %>
+      <% end %>
+    </div>
+  </div>
+</div>
