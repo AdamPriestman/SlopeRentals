@@ -1,6 +1,6 @@
-<div class="show-container">
 
-</div>
+
+
 <div class="container justify-content-center">
 
   <h1 class="pt-3 pb-3"><%= @listing.name %></h1>
@@ -25,7 +25,7 @@
 
         </div>
 
-        <div class="booking-form col-6">
+        <div class="booking-form col-6 <%= "current" if @listing.user == current_user %>">
           <h4>Rent this item</h4>
           <h6> Price Per Day: <strong>£<%= @listing.price_per_day %><strong></h6>
           <%= simple_form_for [@listing, @offer] do |f| %>
