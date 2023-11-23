@@ -1,3 +1,4 @@
-<h2><%= listing.name %></h2>
-<p><%= listing.photo %></p>
-<p><%= listing.price_per_day %></p>
+<h4><%= listing.name %></h4>
+<p><%= cl_image_tag listing.photos.first.key, height: 150, width: 220, crop: :fill %></p>
+<p class="mb-0"> <strong>Equipment: </strong> <%= listing.equipment_type %></p>
+<p class="mb-1"> <strong>Price per day: </strong> £<%= listing.price_per_day %></p>

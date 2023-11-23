@@ -70,6 +70,8 @@ class ListingsController < ApplicationController
         lng: listing.user.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
       }]
+  end
+
   def set_listing
     @listing = Listing.find(params[:id])
   end
