@@ -7,21 +7,12 @@ class ListingsController < ApplicationController
     else
       @listings = Listing.all
     end
-    # Geocoding on index for test
-    @listings = Listing.all
-    # The `geocoded` scope filters only flats with coordinates
-    @markers = @listings.geocoded.map do |listing|
-      {
-        lat: listing.latitude,
-        lng: listing.longitude
-      }
-    end
-
   end
 
   def show
     @listing = Listing.find(params[:id])
     @offer = Offer.new
+    @markers = geocode(@listing)
   end
 
   def new
@@ -62,5 +53,16 @@ class ListingsController < ApplicationController
       :description,
       photos: []
     )
+  end
+
+  # Geocoding on index for test
+  def geocode(listing)
+    # The `geocoded` scope filters only flats with coordinates
+    @markers =
+      [{
+        lat: listing.user.latitude,
+        lng: listing.user.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
+      }]
   end
 end
