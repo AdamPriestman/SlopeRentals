@@ -1,17 +1,8 @@
-<div class="results-container">
+<div class="index-container">
   <div class="d-flex">
-    <div data-controller="filter" class="filter_sidebar">
-      <button class="filter_button btn" data-filter-target="button" data-action="click->filter#expandFilters"><i class="fa-solid fa-sliders fa-l"></i> Filter</button>
-        <div class="filters d-none filter py-3 my-3" data-filter-target="filters">
-          <div class="d-flex filter-header justify-content-between">
-            <h3>Filters</h3>
-            <button data-action="click->filter#closeFilters" class="btn filter_x" do><i class="fa-solid fa-x"></i></button>
-          </div>
-          <%= render "filters" %>
-        </div>
-    </div>
+    <%= render "filters" %>
 
-    <div id="listings_anchor" class="row container d-flex justify-content-center">
+    <div class="row container d-flex justify-content-center">
       <div class="listings mt-3">
         <div id="listings">
           <% @listings.each do |listing| %>
