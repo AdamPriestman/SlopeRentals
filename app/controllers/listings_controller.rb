@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params[:id])
+    @listing = set_listing
     @offer = Offer.new
   end
 
@@ -28,18 +28,28 @@ class ListingsController < ApplicationController
   end
 
   def edit
-    @listing = Listing.find(params[:id])
+    @listing = set_listing
   end
 
   def update
-    @listing = Listing.find(params[:id])
+    @listing = set_listing
     @listing.update(listing_params)
     redirect_to listing_path(@listing)
+  end
+
+  def destroy
+    @listing = set_listing
+    @listing.destroy
+    redirect_to offers_path(current_user)
   end
 
   private
 
   def listing_params
     params.require(:listing).permit(:name, :equipment_type, :price_per_day, :photo, :size, :condition, :brand, :gender, :description)
+  end
+
+  def set_listing
+    @listing = Listing.find(params[:id])
   end
 end
