@@ -1,6 +1,6 @@
 <div data-controller="reservation">
   <div class="card-booking">
-    <%= cl_image_tag listing.photo.key %>
+    <%= cl_image_tag listing.photos.first.key %>
     <div class="card-booking-infos">
       <h2><%= listing.name %></h2>
       <p><%= listing.equipment_type %></p>

@@ -9,6 +9,8 @@ gem "dotenv-rails"
 
 gem "cloudinary"
 
+gem 'faker'
+
 gem "pg_search"
 
 gem 'psych', "~> 4.0"
