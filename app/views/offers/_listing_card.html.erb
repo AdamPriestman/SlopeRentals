@@ -6,6 +6,7 @@
       <p><%= listing.equipment_type %></p>
       <p><%= link_to "Item details", listing_path(listing) %></p>
       <p><%= link_to "Edit this listing", edit_listing_path(listing) %></p>
+      <p><%= link_to "Delete this listing", listing_path(listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
     </div>
     <div class="card-booking-dates">
       <h3><%= listing.price_per_day %>£ per day</h3>
@@ -14,8 +15,12 @@
   </div>
   <div class="d-none" data-reservation-target="reservations">
     <div class="incoming-card">
-      <% listing.offers.sort_by(&:start_date).each do |offer| %>
-        <%= render "incoming_booking", offer:offer %>
+      <% if listing.offers.empty? %>
+        <p>No reservations for this item yet</p>
+      <% else %>
+        <% listing.offers.sort_by(&:start_date).each do |offer| %>
+          <%= render "incoming_booking", offer:offer %>
+        <% end %>
       <% end %>
     </div>
   </div>
