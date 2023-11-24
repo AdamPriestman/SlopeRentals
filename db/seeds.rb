@@ -29,8 +29,10 @@ puts "______"
 puts "______"
 puts "______"
 
+files = ["https://static.vecteezy.com/system/resources/thumbnails/005/544/770/small/profile-icon-design-free-vector.jpg", "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg", "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"]
+
 5.times do |i|
-  user_file = URI.open("https://static.vecteezy.com/system/resources/thumbnails/005/544/770/small/profile-icon-design-free-vector.jpg")
+  user_file = URI.open(files.sample)
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
