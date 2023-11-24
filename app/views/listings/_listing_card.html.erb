@@ -1,17 +1,20 @@
 <div class="card-category">
   <%= cl_image_tag listing.photos.first.key %>
-  <div class="card-infos">
+  <div class="card-infos-container">
     <div>
-      <h4><strong><%= listing.name %></strong></h4>
-      <p>£<%= listing.price_per_day %> per day </p>
+      <h4><%= listing.name %></h4>
     </div>
-
-      <p><%= listing.user.first_name %> <%= listing.user.last_name %></p>
-      <% if listing.user.photo.key? %>
-            <%= cl_image_tag listing.user.photo.key%>
+    <div class="card-infos">
+      <p class="card-infos-price">£<%= listing.price_per_day %> per day </p>
+      <div class="seller">
+        <p><%= listing.user.first_name %> <%= listing.user.last_name %></p>
+        <% if listing.user.photo.key? %>
+          <%= cl_image_tag listing.user.photo.key%>
         <% else%>
-            <p><img src=<%= image_path("unknown.png") %> class="card-seller" alt="User picture" width="50" height="50"></p>
+          <img src=<%= image_path("unknown.png") %> class="card-seller" alt="User picture" width="50" height="50">
         <% end %>
+      </div>
 
+    </div>
   </div>
 </div>

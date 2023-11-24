@@ -24,6 +24,11 @@
     background-color: white;
   }
 
+  .current {
+    pointer-events: none;
+    opacity: .7;
+  }
+
   .btn {
     border-radius: 5px ;
   }
