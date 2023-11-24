@@ -96,8 +96,16 @@ a {
   width: 40px;
 }
 
+.listing-card {
+  position: relative;
+}
 
-
+.delete {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
