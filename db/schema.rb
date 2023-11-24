@@ -58,7 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_23_152901) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.bigint "listing_id", null: false
+    t.bigint ff, null: false
     t.bigint "user_id", null: false
     t.date "start_date"
     t.date "end_date"
