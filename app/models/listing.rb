@@ -9,4 +9,5 @@ class Listing < ApplicationRecord
       tsearch: { prefix: true }
     }
   validates :name, :price_per_day, :equipment_type, :photos, presence: true
+
 end

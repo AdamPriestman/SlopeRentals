@@ -2,9 +2,6 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    # @listings.each do |listing|
-    #   seller_of_the_listing = listing.user.photo
-    # end
     if params[:query].present?
       @listings = Listing.search_by_name_and_description(params[:query])
     else
@@ -15,6 +12,7 @@ class ListingsController < ApplicationController
   def show
     @listing = set_listing
     @offer = Offer.new
+    @markers = geocode(@listing)
   end
 
   def new
@@ -61,6 +59,17 @@ class ListingsController < ApplicationController
       :description,
       photos: []
     )
+  end
+
+  # Geocoding on index for test
+  def geocode(listing)
+    # The `geocoded` scope filters only flats with coordinates
+    @markers =
+      [{
+        lat: listing.user.latitude,
+        lng: listing.user.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
+      }]
   end
 
   def set_listing

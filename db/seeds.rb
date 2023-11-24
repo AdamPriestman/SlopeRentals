@@ -11,6 +11,8 @@
 require "open-uri"
 require 'faker'
 
+
+
 puts "Cleaning Database"
 Offer.destroy_all
 puts "All offers destroyed"
