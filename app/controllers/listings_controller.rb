@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
 
   def filter
     filters = params[:filters] || []
-    @filtered_ids = Listing.where(equipment_type: filters).pluck(:id)
+    @filtered_ids = Listing.where(condition: filters).pluck(:id)
 
     respond_to do |format|
       format.json { render json: @filtered_ids }

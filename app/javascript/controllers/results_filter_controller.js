@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="results-filter"
 export default class extends Controller {
-  static targets = ["checkboxItem", "checkboxCondition", "result"];
+  static targets = ["checkboxCondition", "result"];
 
   connect() {
     console.log("connected")
@@ -46,7 +46,7 @@ export default class extends Controller {
 
   getSelectedFilters() {
     let selectedFilters = []
-    this.checkboxItemTargets.forEach((checkbox)=>{
+    this.checkboxConditionTargets.forEach((checkbox)=>{
       if (checkbox.checked) {
         selectedFilters.push(checkbox.value)
       }
