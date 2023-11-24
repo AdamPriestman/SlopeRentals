@@ -93,17 +93,6 @@ item2 = Listing.new(
 item2.photos.attach(io: file, filename: "item2.png", content_type: "image/png")
 item2.save!
 
-puts "Attaching more photos to Black and Brown Snowboard"
-file = URI.open("https://cdn.shopify.com/s/files/1/0634/5844/3506/files/jibbing_oneill_europe_1024x1024.jpg?v=1669975978")
-
-item2.photos.attach(io: file, filename: "item2.png", content_type: "image/png")
-item2.save!
-
-file = URI.open("https://i.pinimg.com/736x/ac/48/3a/ac483a6cab791b3f22b50b088d794ba1.jpg")
-
-item2.photos.attach(io: file, filename: "item2.png", content_type: "image/png")
-item2.save!
-
 file = URI.open("https://cdn.outsideonline.com/wp-content/uploads/2018/03/15/foldable-poles-shorter-skurka_h.jpg")
 
 item3 = Listing.new(
