@@ -1,21 +1,37 @@
-
-
-
 <div class="container justify-content-center">
 
-  <div class="d-flex justify-content-between align-items-center">
+
+ <div class="d-flex justify-content-between align-items-center">
     <h1 class="pt-3 pb-3"><%= @listing.name %></h1>
     <p class="m-0"><%= link_to "Back to results", listings_path, class: "back-link" %></p>
   </div>
 
-    <% @listing.photos.each do |photo| %>
-      <div class="row product-img">
-        <%= cl_image_tag photo.key %>
-      </div>
-    <% end %>
 
-    <div class ="row">
-        <div class="description col-6">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <% @listing.photos.each_with_index do |photo, index| %>
+          <% if index == 0 %>
+            <div class="carousel-item active">
+          <% else %>
+            <div class="carousel-item">
+          <% end %>
+            <%= cl_image_tag photo.key, class: "d-block w-100" %>
+          </div>
+        <% end %>
+    </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+    <div class ="prod-info-show row mt-5">
+        <div class="description col-6 mr-5">
           <ul>
             <li class="border-bottom"><strong>Equipment: </strong><%= @listing.equipment_type.capitalize %></li>
             <li class="border-bottom pb-3"><strong>Seller: </strong><%= @listing.user.first_name%> <%= @listing.user.last_name %></li>
@@ -23,12 +39,13 @@
             <li><strong>Gender: </strong><%= @listing.gender.capitalize %></li>
             <li><strong>Condition: </strong><%= @listing.condition.capitalize %></li>
             <li class="border-bottom pb-3"><strong>Brand: </strong><%= @listing.brand.capitalize %></li>
-            <li><strong>Description: </strong><%= @listing.description %></li>
+            <li><strong>Description: </strong></li>
+            <li><%= @listing.description %></li>
           </ul>
-
         </div>
 
-        <div class="booking-form col-6 <%= "current" if @listing.user == current_user %>">
+
+        <div class="booking-form col-6 ml-5<%= "current" if @listing.user == current_user %>">
           <h4>Rent this item</h4>
           <h6> Price Per Day: <strong>£<%= @listing.price_per_day %><strong></h6>
           <%= simple_form_for [@listing, @offer] do |f| %>
@@ -43,10 +60,10 @@
           <% end %>
         </div>
     </div>
-    <div style="width: 100%; height: 600px;"
+    <div class="map" style="width: 100%; height: 600px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
-</div>
+  </div>
