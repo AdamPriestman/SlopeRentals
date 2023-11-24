@@ -301,11 +301,11 @@ end
 
 puts "Creating snowboards"
 
-files = ["https://badworkwear.co.uk/cdn/shop/products/bad-shred-carbon-fibre-snowboard-332581.jpg?v=1686715190", "https://images.snowleader.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,w=1630,h=1000/https://images.snowleader.com/media/catalog/category/categorie_boots_de_snowboard_mobile.jpg", "https://contents.mediadecathlon.com/p1725370/k$0b3ac0cc2c1f91527b569138d9a164dc/1920x0/3000pt2033/6000xcr2800/bien_regler_fixation_snow_titre.jpg?format=auto"]
+files = ["https://badworkwear.co.uk/cdn/shop/products/bad-shred-carbon-fibre-snowboard-332581.jpg?v=1686715190", "https://images.snowleader.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,w=1630,h=1000/https://images.snowleader.com/media/catalog/category/categorie_boots_de_snowboard_mobile.jpg"]
 
 names = ["All-Mountain Snowboard", "Freestyle Snowboard Adventure", "Precision Carving Snowboard", "Versatile Alpine Snowboard"]
 
-3.times do |i|
+2.times do |i|
   listing_file = URI.open(files[i - 1])
   listing = Listing.new(
     name: names[i - 1],
