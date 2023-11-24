@@ -45,15 +45,16 @@
     border-radius: 5px ;
   }
 
-  ul {
+  .show-page-list {
     list-style: none;
     background-color: white;
+    li {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
   }
 
-  ul li {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+
 
 .back-link {
   color: rgba(0,0,0,0.65);
