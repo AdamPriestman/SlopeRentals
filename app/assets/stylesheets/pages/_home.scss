@@ -1,10 +1,18 @@
 // Specific CSS for your home-page
 .info-cards-container{
-  display: flex;
-  justify-content: space-evenly;
+  margin: 50px 50px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 90px;
+
   .info-card {
-    background-color: green;
+    // background-color: rgb(90, 111, 156);
+    background-image: linear-gradient(to bottom right, rgb(158, 203, 221), white);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 20px;
   }
+
 }
 
 .search-container-banner {
