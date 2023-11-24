@@ -9,6 +9,15 @@ class ListingsController < ApplicationController
     end
   end
 
+  def filter
+    filters = params[:filters] || []
+    @filtered_ids = Listing.where(equipment_type: filters).pluck(:id)
+
+    respond_to do |format|
+      format.json { render json: @filtered_ids }
+    end
+  end
+
   def show
     @listing = set_listing
     @offer = Offer.new

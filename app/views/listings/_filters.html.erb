@@ -1,6 +1,6 @@
 <div data-controller="filter" class="filter_sidebar">
   <button class="filter_button btn" data-filter-target="button" data-action="click->filter#expandFilters"><i class="fa-solid fa-sliders fa-l"></i> Filter</button>
-    <div class="filters d-none filter py-3 my-3" data-filter-target="filters" data-controller="results-filter">
+    <div class="filters d-none filter py-3 my-3" data-filter-target="filters">
       <div class="d-flex filter-header justify-content-between">
         <h3>Filters</h3>
         <button data-action="click->filter#closeFilters" class="btn filter_x" do><i class="fa-solid fa-x"></i></button>
@@ -9,24 +9,28 @@
       <div class="filter_sub d-flex align-items-center">
         <ul>
           <li>
-            <label for="snowboard">Snowboard</label>
-            <input type="checkbox" id="condition" name="itemtype" value="snowboard" data-results-filter-target="checkbox">
+            <label for="Item type">Snowboard</label>
+            <input type="checkbox" name="itemtype" value="snowboard" data-results-filter-target="checkboxItem">
           </li>
           <li>
-            <label for="snowboard">Helmet</label>
-            <input type="checkbox" id="condition" name="itemtype" value="helmet" data-results-filter-target="checkbox">
+            <label for="Item type">Helmet</label>
+            <input type="checkbox" name="itemtype" value="helmet" data-results-filter-target="checkboxItem">
           </li>
           <li>
-            <label for="snowboard">Gloves</label>
-            <input type="checkbox" id="condition" name="itemtype" value="gloves" data-results-filter-target="checkbox">
+            <label for="Item type">Gloves</label>
+            <input type="checkbox" name="itemtype" value="gloves" data-results-filter-target="checkboxItem">
           </li>
           <li>
-            <label for="snowboard">Skis</label>
-            <input type="checkbox" id="condition" name="itemtype" value="skis" data-results-filter-target="checkbox">
+            <label for="Item type">Skis</label>
+            <input type="checkbox" name="itemtype" value="skis" data-results-filter-target="checkboxItem">
           </li>
           <li>
-            <label for="snowboard">Goggles</label>
-            <input type="checkbox" id="condition" name="itemtype" value="goggles" data-results-filter-target="checkbox">
+            <label for="Item type">Goggles</label>
+            <input type="checkbox" name="itemtype" value="goggles" data-results-filter-target="checkboxItem">
+          </li>
+          <li>
+            <label for="Item type">Boots</label>
+            <input type="checkbox" name="itemtype" value="boots" data-results-filter-target="checkboxItem">
           </li>
         </ul>
       </div>
@@ -35,27 +39,29 @@
       <div class="filter_sub d-flex align-items-center">
         <ul>
           <li>
-            <label for="snowboard">Brand new</label>
-            <input type="checkbox" id="condition" name="snowboard" value="snowboard" data-results-filter-target="checkbox">
+            <label for="Condition">Brand new</label>
+            <input type="checkbox" name="condition" value="Brand new" data-results-filter-target="checkboxCondition">
           </li>
           <li>
-            <label for="snowboard">Excellent</label>
-            <input type="checkbox" id="condition" name="snowboard" value="snowboard" data-results-filter-target="checkbox">
+            <label for="Condition">Excellent</label>
+            <input type="checkbox" name="condition" value="Excellent" data-results-filter-target="checkboxCondition">
           </li>
           <li>
-            <label for="snowboard">Very good</label>
-            <input type="checkbox" id="condition" name="snowboard" value="snowboard" data-results-filter-target="checkbox">
+            <label for="Condition">Very good</label>
+            <input type="checkbox" name="condition" value="Very good" data-results-filter-target="checkboxCondition">
           </li>
           <li>
-            <label for="snowboard">Good</label>
-            <input type="checkbox" id="condition" name="snowboard" value="snowboard" data-results-filter-target="checkbox">
+            <label for="Condition">Good</label>
+            <input type="checkbox" name="condition" value="Good" data-results-filter-target="checkboxCondition">
           </li>
           <li>
-            <label for="snowboard">Well worn</label>
-            <input type="checkbox" id="condition" name="snowboard" value="snowboard" data-results-filter-target="checkbox">
+            <label for="Condition">Well worn</label>
+            <input type="checkbox" name="condition" value="Well worn" data-results-filter-target="checkboxCondition">
           </li>
         </ul>
       </div>
+
       <button data-action="click->results-filter#filterIndex" class="btn btn-outline-primary">Apply filters</button>
+
     </div>
 </div>
