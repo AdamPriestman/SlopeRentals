@@ -349,7 +349,7 @@ end
 
 puts "Creating ski goggles"
 
-files = ["https://www.tripsavvy.com/thmb/cOS-Xm2X11jTRqPVr077SeeFl_g=/1000x1000/filters:no_upscale():max_bytes(150000):strip_icc()/Oakley_FlightDeckGoggles_HeroHoriz-c16a79a9b91a4cc3bd1034c933926d1b.jpg", "https://m.media-amazon.com/images/I/61TjboxhLyL._AC_UY580_.jpg", "https://images.boardriders.com/globalGrey/roxy-products/all/default/large/erjtg03166_roxy,l_kvj0_frt1.jpg"]
+files = ["https://www.tripsavvy.com/thmb/cOS-Xm2X11jTRqPVr077SeeFl_g=/1000x1000/filters:no_upscale():max_bytes(150000):strip_icc()/Oakley_FlightDeckGoggles_HeroHoriz-c16a79a9b91a4cc3bd1034c933926d1b.jpg"]
 
 names = ["Advanced Snow Eyewear", "High-Performance Goggle Gear", "Precision Snowfield Eyewear"]
 
