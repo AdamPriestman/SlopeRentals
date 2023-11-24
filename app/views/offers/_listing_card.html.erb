@@ -1,12 +1,14 @@
 <div data-controller="reservation">
-  <div class="card-booking">
+  <div class="card-booking listing-card">
     <%= cl_image_tag listing.photos.first.key %>
-    <div class="card-booking-infos">
+    <div class="card-booking-infos listing-card">
       <h2><%= listing.name %></h2>
       <p><%= listing.equipment_type %></p>
       <p><%= link_to "Item details", listing_path(listing) %></p>
       <p><%= link_to "Edit this listing", edit_listing_path(listing) %></p>
-      <p><%= link_to "Delete this listing", listing_path(listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+      <%= link_to listing_path(listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "back-link delete" do %>
+      <i class="fa-regular fa-trash-can"></i>
+      <% end %>
     </div>
     <div class="card-booking-dates">
       <h3><%= listing.price_per_day %>£ per day</h3>
