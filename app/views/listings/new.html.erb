@@ -2,11 +2,11 @@
   <h1 class="fw-bold pb-2">  Add new listing!! </h1>
   <%= simple_form_for @listing, :html => { :class => "form" }  do |f| %>
     <%= f.input :name, placeholder: "*Title of the post", label: false %>
-    <%= f.input :equipment_type, label: false, collection: ["*Equipment Type", "goggles", "snowboard", "poles", "skis", "helmet", "gloves"], selected: "*Equipment Type" %>
+    <%= f.input :equipment_type, label: false, collection: ["*Equipment Type", "Snowboard", "Helmet", "Gloves", "Skis", "Goggles", "Boots"], selected: "*Equipment Type" %>
     <%= f.input :price_per_day, placeholder: "*Price per day, £", label: false%>
     <%= f.input :photos, as: :file, label: 'Upload Photos', input_html: { multiple: true } %>
     <%= f.input :size, placeholder: "Size", label: false %>
-    <%= f.input :condition, label: false, collection: ["Condition", "Very Good", "Good", "Satisfactory", "As good as New"], selected: "Condition"%>
+    <%= f.input :condition, label: false, collection: ["Condition", "Brand new", "Excellent", "Very good", "Good", "Well worn"], selected: "Condition"%>
     <%= f.input :brand, placeholder: "Brand", label: false %>
     <%= f.input :gender, label: false, collection: %w[Gender Unisex Men Women Boy Girl], selected: "Gender"%>
     <%= f.input :description%>

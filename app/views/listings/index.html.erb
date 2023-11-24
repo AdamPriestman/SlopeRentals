@@ -1,6 +1,6 @@
 
 
-<div class="index-container">
+<div class="index-container" data-controller="results-filter">
   <div class="d-flex">
     <%= render "filters" %>
 
@@ -8,10 +8,13 @@
       <div class="listings mt-3">
         <div id="listings">
           <% @listings.each do |listing| %>
-            <%= link_to listing_path(listing) do %>
-              <%= render "listing_card", listing:listing %>
-            <% end %>
+            <div data-results-filter-target="result" data-id=<%= listing.id %>>
+              <%= link_to listing_path(listing) do %>
+                <%= render "listing_card", listing:listing %>
+              <% end %>
+            </div>
           <% end %>
+
         </div>
       </div>
     </div>
