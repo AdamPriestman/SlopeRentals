@@ -11,8 +11,6 @@
 require "open-uri"
 require 'faker'
 
-
-
 puts "Cleaning Database"
 Offer.destroy_all
 puts "All offers destroyed"
@@ -29,9 +27,9 @@ puts "______"
 puts "______"
 puts "______"
 
-files = ["https://qph.cf2.quoracdn.net/main-thumb-1278318002-200-ydzfegagslcexelzgsnplcklfkienzfr.jpeg", "https://resumeworded.com/linkedin-review/img/lir-testimonial.jpeg", "https://www.japantimes.co.jp/uploads/imported_images/uploads/2023/04/np_file_224783-200x200.jpeg", "https://www.backcountryskiingcanada.com/web/default/files/pages-image/Pro_Skiers/Chris_Davenport.jpg", "https://www.japantimes.co.jp/wp-content/uploads/2022/01/np_file_134272-1-200x200.jpeg"]
+files = ["https://pbs.twimg.com/profile_images/3673003320/3fc9896829d9022e3cfc7e6bbce57632_200x200.jpeg", "https://m.media-amazon.com/images/M/MV5BOGY1YTkzM2EtMjYyOC00ZGMyLTliNGMtMGU3MjBmYzUyNWVhXkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_.jpg", "https://static1.purepeople.com.br/people/1/34/71/@/487756--200x200-2.jpg", "https://pbs.twimg.com/profile_images/1279566064674844672/kzdA4Peg_200x200.jpg"]
 
-addresses = ["236 Matthias Road", "67 Downs Park Road", "55 Rutland Road", "305 Hornsey Road", "3 Katherine Close"]
+addresses = ["236 Matthias Road, London", "67 Downs Park Road, London", "55 Rutland Road, London", "305 Hornsey Road, London", "3 Katherine Close, London"]
 
 5.times do |i|
   user_file = URI.open(files[i - 1])
@@ -51,7 +49,7 @@ steve_file = URI.open("https://www.uncut.at/data/persons/pic/200x200/steve-busce
 steve = User.new(
   first_name: "Steve",
   last_name: "Skiman",
-  location: "138 Kingsland Road",
+  location: "138 Kingsland Road, London",
   email: "skisteve@email.com",
   password: "password"
 )
@@ -90,6 +88,17 @@ item2 = Listing.new(
   description: "Good condition but has some scratches as you can see in the photos. Missing 2 of the binding bolts but you can get a new set for less than £10. Good bit of kit for a beginner!",
   user: User.all.to_a.sample
 )
+item2.photos.attach(io: file, filename: "item2.png", content_type: "image/png")
+item2.save!
+
+puts "Attaching more photos to Black and Brown Snowboard"
+file = URI.open("https://cdn.shopify.com/s/files/1/0634/5844/3506/files/jibbing_oneill_europe_1024x1024.jpg?v=1669975978")
+
+item2.photos.attach(io: file, filename: "item2.png", content_type: "image/png")
+item2.save!
+
+file = URI.open("https://i.pinimg.com/736x/ac/48/3a/ac483a6cab791b3f22b50b088d794ba1.jpg")
+
 item2.photos.attach(io: file, filename: "item2.png", content_type: "image/png")
 item2.save!
 
@@ -192,9 +201,9 @@ item8.photos.attach(io: file, filename: "item8.png", content_type: "image/png")
 item8.save!
 
 puts "Creating buyers"
-files = ["https://podyssey.imgix.net/website/images/Host%20Headshots/james-acaster.png?w=200&h=200&fit=crop&auto=format", "https://cdns-images.dzcdn.net/images/artist/26efd1089500ff843c26e2d23c0e94c9/200x200.jpg"]
+files = ["https://podyssey.imgix.net/website/images/Host%20Headshots/james-acaster.png?w=200&h=200&fit=crop&auto=format", "https://cdns-images.dzcdn.net/images/artist/26efd1089500ff843c26e2d23c0e94c9/200x200.jpg", "https://geneacdn.net/bundles/geneanetgeneastar/images/celebrites/200px/hanks.jpg"]
 
-addresses = ["28 Linscott Road", "20B Goulton Road"]
+addresses = ["28 Linscott Road, London", "20B Goulton Road, London", "19 Spears Road, London"]
 
 buyer1_file = URI.open(files[0])
 buyer1 = User.new(
@@ -218,6 +227,17 @@ buyer2 = User.new(
 buyer2.photo.attach(io: buyer2_file, filename: "pfp1.png", content_type: "image/png")
 buyer2.save!
 
+buyer3_file = URI.open(files[2])
+buyer3 = User.new(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  location: addresses[2],
+  email: "skibuyer3@email.com",
+  password: "password"
+)
+buyer3.photo.attach(io: buyer3_file, filename: "pfp1.png", content_type: "image/png")
+buyer3.save!
+
 listings = [item1, item2, item3, item4, item5, item6, item7, item8]
 
 puts "Buyers are renting things now"
@@ -237,8 +257,20 @@ end
     end_date: "2023-12-17"
   )
   offer.user = buyer2
-  offer.listing = listings[i + 3]
+  offer.listing = listings[i]
   offer.save!
+  puts "-------"
+end
+
+3.times do |i|
+  offer = Offer.new(
+    start_date: "2023-12-20",
+    end_date: "2023-12-28"
+  )
+  offer.user = buyer3
+  offer.listing = listings[i]
+  offer.save!
+  puts "-------"
 end
 
 puts "Creating more skis"
@@ -262,6 +294,7 @@ names = ["Vibrant All-Terrain Skis", "Precision Carving Skis", "Versatile Alpine
   )
   listing.photos.attach(io: listing_file, filename: "item.png", content_type: "image/png")
   listing.save!
+  puts "-------"
 end
 
 puts "Creating snowboards"
@@ -285,6 +318,7 @@ names = ["All-Mountain Snowboard", "Freestyle Snowboard Adventure", "Precision C
   )
   listing.photos.attach(io: listing_file, filename: "item.png", content_type: "image/png")
   listing.save!
+  puts "-------"
 end
 
 puts "Creating ski boots"
@@ -308,6 +342,7 @@ names = ["Precision-Fit All-Mountain Ski Boots", "Performance Alpine Ski Boots",
   )
   listing.photos.attach(io: listing_file, filename: "item.png", content_type: "image/png")
   listing.save!
+  puts "-------"
 end
 
 puts "Creating ski goggles"
@@ -332,4 +367,52 @@ names = ["Advanced Snow Eyewear", "High-Performance Goggle Gear", "Precision Sno
   )
   listing.photos.attach(io: listing_file, filename: "item.png", content_type: "image/png")
   listing.save!
+  puts "-------"
+end
+
+puts "Creating helmets"
+
+files = ["https://images.boardriders.com/globalGrey/roxy-products/all/default/large/erjtl03056_roxy,l_kvj0_frt1.jpg", "https://www.littleskiers.co.uk/media/catalog/product/cache/27db811ad6dfca2ea3fbd18c86603326/c/o/coolcasc_iguana_2_1000_x_1000.jpg", "https://www.smithoptics.com/dw/image/v2/BDPZ_PRD/on/demandware.static/-/Sites-smith-master-catalog/default/dw2c384f27/images/product-images/level-helmet/matteSlate/matteSlate_ls02.png?sw=700&sh=700&sm=fit"]
+
+names = ["Advanced Safety Ski Helmet", "High-Performance Snow Helmet", "Premium Alpine Ski Headgear"]
+
+3.times do |i|
+  listing_file = URI.open(files[i - 1])
+  listing = Listing.new(
+    name: names[i - 1],
+    price_per_day: (11..15).to_a.sample,
+    equipment_type: "Helmet",
+    size: 100,
+    gender: "Unisex",
+    condition: "Very Good",
+    brand: "ProtectiveGear",
+    description: "Rent the ultimate safety companion for your ski adventure! Offering top-notch protection and comfort, these quality ski helmets ensure a safe and stylish ride down the slopes. Enjoy premium headgear without the commitment!",
+    user: User.all.to_a.sample
+  )
+  listing.photos.attach(io: listing_file, filename: "item.png", content_type: "image/png")
+  listing.save!
+  puts "-------"
+end
+
+puts "Creating gloves"
+
+files = ["https://www.switchbacktravel.com/sites/default/files/articles%20/Hestra%20Heli%20ski%20gloves%20%28gripping%20ski%20pole%29%20%28m%29.jpg", "https://img.hatshopping.co.uk/Basic-Kids-Ski-Gloves-by-Barts-fuchsia.42657_rf84.jpg", "https://content.dare2b.com/DMG344_800/750/DMG344_800_02_bynder_defined_type_product_021690951256.jpg"]
+names = ["Ecxellent alpine gloves", "Pink gloves", "Nice, but worn snow gloves"]
+
+3.times do |i|
+  listing_file = URI.open(files[i - 1])
+  listing = Listing.new(
+    name: names[i - 1],
+    price_per_day: (11..15).to_a.sample,
+    equipment_type: "Gloves",
+    size: 90,
+    gender: "Unisex",
+    condition: "Good",
+    brand: "WinterHandfashion",
+    description: "Experience warmth and durability on the slopes with my reliable ski gloves. Tried, tested, and ready for adventure, these gloves offer superior insulation and grip, ensuring your hands stay cozy and in control. Rent them for a memorable snow-filled experience!",
+    user: User.all.to_a.sample
+  )
+  listing.photos.attach(io: listing_file, filename: "item.png", content_type: "image/png")
+  listing.save!
+  puts "-------"
 end
