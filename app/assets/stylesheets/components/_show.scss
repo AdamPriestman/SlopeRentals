@@ -3,18 +3,27 @@
   margin: 0 auto;
   width: 80%;
 
-  .product-img {
-    margin-bottom: 50px;
-    img {
+    .carousel-inner {
+      margin-bottom: 40px;
       justify-content: center;
       height: 28em;
       width: 100%;
       object-fit: cover;
-      border-radius: 5px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(4, 0, 0, 0.148);
       margin: 0;
       padding: 0;
     }
+
+    .map {
+      border-radius: 20px;
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+
+  .description {
+    max-width: 100%;
   }
 
   .booking-form {
@@ -23,6 +32,8 @@
     border-radius: 12px;
     padding: 20px;
     background-color: white;
+    width: 45%;
+    margin-left: 47px
   }
 
   .current {
@@ -43,8 +54,6 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
-
-}
 
 .back-link {
   color: rgba(0,0,0,0.65);
