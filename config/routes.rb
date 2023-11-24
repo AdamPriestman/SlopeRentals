@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :listings do
+    post 'filter', on: :collection
     resources :offers, only: [:create]
   end
 
