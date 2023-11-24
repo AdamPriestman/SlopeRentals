@@ -9,6 +9,8 @@ export default class extends Controller {
   }
 
   filterIndex() {
-    console.log(this.checkboxTarget.checked)
+    this.checkboxTargets.forEach((checkbox) =>{
+      console.log(`${checkbox.value} => ${checkbox.checked}`)
+    })
   }
 }
