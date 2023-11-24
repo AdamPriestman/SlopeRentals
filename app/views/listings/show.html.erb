@@ -3,8 +3,12 @@
   <h1 class="pb-1"><%= @listing.name %></h1>
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <% @listing.photos.each do |photo| %>
-          <div class="carousel-item active">
+        <% @listing.photos.each_with_index do |photo, index| %>
+          <% if index == 0 %>
+            <div class="carousel-item active">
+          <% else %>
+            <div class="carousel-item">
+          <% end %>
             <%= cl_image_tag photo.key, class: "d-block w-100" %>
           </div>
         <% end %>
