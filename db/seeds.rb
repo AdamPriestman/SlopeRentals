@@ -26,6 +26,7 @@ puts "Creating Users"
 puts "______"
 puts "______"
 puts "______"
+puts "______"
 
 files = ["https://pbs.twimg.com/profile_images/3673003320/3fc9896829d9022e3cfc7e6bbce57632_200x200.jpeg", "https://m.media-amazon.com/images/M/MV5BOGY1YTkzM2EtMjYyOC00ZGMyLTliNGMtMGU3MjBmYzUyNWVhXkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_.jpg", "https://static1.purepeople.com.br/people/1/34/71/@/487756--200x200-2.jpg", "https://pbs.twimg.com/profile_images/1279566064674844672/kzdA4Peg_200x200.jpg", "https://m.media-amazon.com/images/M/MV5BZjI3YzRiMDItNTI1Yi00YWI4LWJhNDEtOTY5MDFiZjU4OTViXkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_UY200_CR33,0,200,200_AL_.jpg"]
 
