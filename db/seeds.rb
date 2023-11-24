@@ -301,25 +301,25 @@ end
 
 puts "Creating snowboards"
 
-file = "https://images.snowleader.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,w=1630,h=1000/https://images.snowleader.com/media/catalog/category/categorie_boots_de_snowboard_mobile.jpg"
+# file = "https://images.snowleader.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,w=1630,h=1000/https://images.snowleader.com/media/catalog/category/categorie_boots_de_snowboard_mobile.jpg"
 
-name = "All-Mountain Snowboard"
+# name = "All-Mountain Snowboard"
 
-listing_file = URI.open(file)
-listing = Listing.new(
-  name: names,
-  price_per_day: (20..30).to_a.sample,
-  equipment_type: "Snowboard",
-  size: 130,
-  gender: "Unisex",
-  condition: "Excellent",
-  brand: "Skimasters",
-  description: "Unleash your skills on the slopes with my pre-loved snowboard. Crafted for all-mountain versatility, its experienced design offers the finesse you need for powdery trails and groomed runs. This board, though pre-owned, still delivers top-tier performance, ensuring you conquer the snow with style and control, all at an unbeatable value.",
-  user: User.all.to_a.sample
-)
-listing.photos.attach(io: listing_file, filename: "item.png", content_type: "image/png")
-listing.save!
-puts "-------"
+# listing_file = URI.open(file)
+# listing = Listing.new(
+#   name: names,
+#   price_per_day: (20..30).to_a.sample,
+#   equipment_type: "Snowboard",
+#   size: 130,
+#   gender: "Unisex",
+#   condition: "Excellent",
+#   brand: "Skimasters",
+#   description: "Unleash your skills on the slopes with my pre-loved snowboard. Crafted for all-mountain versatility, its experienced design offers the finesse you need for powdery trails and groomed runs. This board, though pre-owned, still delivers top-tier performance, ensuring you conquer the snow with style and control, all at an unbeatable value.",
+#   user: User.all.to_a.sample
+# )
+# listing.photos.attach(io: listing_file, filename: "item.png", content_type: "image/png")
+# listing.save!
+# puts "-------"
 
 puts "Creating ski boots"
 
