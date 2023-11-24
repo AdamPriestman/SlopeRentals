@@ -3,17 +3,27 @@
   margin: 0 auto;
   width: 80%;
 
-    .carousel-inner img {
-      margin-bottom: 50px;
+    .carousel-inner {
+      margin-bottom: 40px;
       justify-content: center;
       height: 28em;
       width: 100%;
       object-fit: cover;
-      border-radius: 5px;
+      border-radius: 20px;
       box-shadow: 0 0 20px rgba(4, 0, 0, 0.148);
       margin: 0;
       padding: 0;
     }
+
+    .map {
+      border-radius: 20px;
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+
+  .description {
+    max-width: 100%;
   }
 
   .booking-form {
@@ -22,6 +32,8 @@
     border-radius: 12px;
     padding: 20px;
     background-color: white;
+    width: 45%;
+    margin-left: 37px
   }
 
   .current {
