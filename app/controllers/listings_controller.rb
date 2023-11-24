@@ -77,7 +77,8 @@ class ListingsController < ApplicationController
       [{
         lat: listing.user.latitude,
         lng: listing.user.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing})
+        info_window_html: render_to_string(partial: "info_window", locals: {listing: listing}),
+        marker_html: render_to_string(partial: "marker", locals: {listing: listing})
       }]
   end
 
