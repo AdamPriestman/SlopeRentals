@@ -7,7 +7,7 @@
     <div class="card-infos">
       <p class="card-infos-price">£<%= listing.price_per_day %> per day </p>
       <div class="seller">
-        <p><%= listing.user.first_name %> <%= listing.user.last_name %></p>
+        <p><%= listing.user.first_name %> <%= listing.user.last_name.first %></p>
         <% if listing.user.photo.key? %>
           <%= cl_image_tag listing.user.photo.key%>
         <% else%>
