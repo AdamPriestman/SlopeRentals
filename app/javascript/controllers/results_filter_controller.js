@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="results-filter"
 export default class extends Controller {
-  static targets = ["checkboxItem", "result"];
+  static targets = ["checkboxItem", "checkboxCondition", "result"];
 
   connect() {
     console.log("connected")
@@ -39,13 +39,13 @@ export default class extends Controller {
   renderResults(data) {
     console.log(data)
     this.resultTargets.forEach((result) => {
-      const shouldShow = data.includes(parseInt(result.dataset.id, 10))
+      const shouldShow = data.length === 0 || data.includes(parseInt(result.dataset.id, 10));
       result.style.display = shouldShow ? "block" : "none";
     });
   }
 
   getSelectedFilters() {
-    let selectedFilters =[]
+    let selectedFilters = []
     this.checkboxItemTargets.forEach((checkbox)=>{
       if (checkbox.checked) {
         selectedFilters.push(checkbox.value)
