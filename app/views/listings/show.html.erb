@@ -3,7 +3,10 @@
 
 <div class="container justify-content-center">
 
-  <h1 class="pt-3 pb-3"><%= @listing.name %></h1>
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="pt-3 pb-3"><%= @listing.name %></h1>
+    <p class="m-0"><%= link_to "Back to results", listings_path, class: "back-link" %></p>
+  </div>
 
     <% @listing.photos.each do |photo| %>
       <div class="row product-img">
